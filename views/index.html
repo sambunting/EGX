@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<title>Page Title</title>
-		<link rel="stylesheet" type="text/css" href="style/normalize.css">
-		<link rel="stylesheet" type="text/css" href="style/stylesheet.css">
+		<title>EGX - Home</title>
+		{% include 'template/headers.html' %}
 	</head>
 	<body>
 		{% include 'template/header.html' %}
-		<br><br>
-		Hello!
-		<br><br>
+		<div id="video-container">
+			<div id="intro-text" data-stellar-ratio="0.5">
+				<img src="http://placehold.it/500x200">
+				<p>The intro text will go here. Eventually.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, officia amet deleniti autem itaque in voluptatem ea est aliquid dolorum.</p>
+			</div>
+
+			<video src="image/350949661.mp4" muted autoplay loop></video>
+		</div>
+		<main id="home">
+			<div id="main-inner">
+				<h2>Sub-Title Text</h2>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laboriosam pariatur dignissimos natus odit doloremque delectus atque nihil quia assumenda, perferendis, molestiae illo in! Totam qui vitae fuga blanditiis dicta, iusto, optio iure ducimus earum quibusdam tempora eligendi, aperiam sequi obcaecati maxime, autem. Aperiam aliquam, dolores doloremque, animi nobis aliquid veniam saepe et, totam nesciunt possimus labore accusantium, iusto illo. Incidunt itaque corporis vero, quod qui mollitia. Dicta enim illum nemo, eum ex voluptate magnam quae quo quaerat laudantium dignissimos dolor quisquam earum nisi velit aperiam ad sint odit. Itaque asperiores, veniam sunt, esse eos repellat nemo ullam! Vero, beatae!				
+			</div>
+		</main>
 		{% include 'template/footer.html' %}
 		<script type="text/javascript" src="script/jquery.js"></script>
 		<script type="text/javascript" src="script/stellar.js"></script>
+		<script type="text/javascript">
+			$.stellar();
+		</script>
 	</body>
 </html>
