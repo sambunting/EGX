@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+			{% include 'template/headers.html' %}
+            <title>EGX - {% block title %}{% endblock %}</title>
+        {% endblock %}
+    </head>
+    <body>
+    	{% include 'template/header.html' %}
+    	<div id="page-header">
+    		<div id="page-header-inner">
+    			<h1 data-stellar-ratio="0.5">{{ block('title') }}</h1>
+    		</div>
+    		
+    	</div>
+        <main><div id="main-inner">{% block content %}{% endblock %}</div></main>
+		{% include 'template/footer.html' %}
+		<script type="text/javascript" src="script/jquery.js"></script>
+		<script type="text/javascript" src="script/stellar.js"></script>
+		<script type="text/javascript">
+			$.stellar();
+		</script>
+    </body>
+</html>
