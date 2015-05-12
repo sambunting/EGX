@@ -14,3 +14,4 @@
 	$template = $twig->loadTemplate($page.'.html');
 	echo $template->render(array());
 ?>
+

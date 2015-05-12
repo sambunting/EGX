@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% block title %}Buy a Ticket{% endblock %}
 {% block content %}
-	<form>
+	
+
+	<form id="select-tickets">
+
+		<div id="progress">
+			<p>Ticket Information</p>
+			<p>Your Details</p>
+			<p>Payment</p>
+		</div>
+
 		<table width="100%">
 			<tr>
 				<td><h3>Multi-Day Tickets</h3></td>
@@ -9,7 +18,7 @@
 			<tr>
 				<td>Super Pass (4-day Early Entry)<br><small>10am-6pm</small></td>
 				<td>
-					<select><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+					<select onchange="updateTotal()" id="super-pass"><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
 				</td>
 				<td>
 					£60.00
@@ -22,7 +31,7 @@
 			<tr>
 				<td>Early Entry<br><small>10am-6pm</small></td>
 				<td>
-					<select><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+					<select onchange="updateTotal()" id="thursday-early"><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
 				</td>
 				<td>
 					£20.00
@@ -31,7 +40,7 @@
 			<tr>
 				<td>Day Ticket<br><small>11am-6pm</small></td>
 				<td>
-					<select><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+					<select onchange="updateTotal()" id="thursday"><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
 				</td>
 				<td>
 					£17.50
@@ -53,7 +62,7 @@
 			<tr>
 				<td>Day Ticket<br><small>11am-6pm</small></td>
 				<td>
-					<select><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+					<select onchange="updateTotal()" id="friday"><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
 				</td>
 				<td>
 					£17.50
@@ -75,7 +84,7 @@
 			<tr>
 				<td>Day Ticket<br><small>11am-6pm</small></td>
 				<td>
-					<select><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+					<select onchange="updateTotal()" id="saturday"><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
 				</td>
 				<td>
 					£17.50
@@ -97,12 +106,93 @@
 			<tr>
 				<td>Day Ticket<br><small>11am-6pm</small></td>
 				<td>
-					<select><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+					<select onchange="updateTotal()" id="sunday"><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
 				</td>
 				<td>
 					£17.50
 				</td>
 			</tr>
+			
+			<tr>
+				<td><h3>TOTAL</h3></td>
+				<td>
+				</td>
+				<td>
+					<span id="total">£00.00</span>
+				</td>
+			</tr>
 		</table>
+
+		<h2 class="title">Your Details</h2>
+
+		<p>Please enter your details. Your ticket will be sent to your address, so please check it carefully. Your email address is used for verification of your ticket. <br><br><b>Please fill out all fields.</b></p>
+
+		<input type="text" placeholder="First Name" name="first_name" id="first_name">
+		<input type="text" placeholder="Last Name" name="last_name" id="last_name">
+		<input type="text" placeholder="Email Address" name="email" id="email">
+		<br><br><br>
+		<input type="text" placeholder="Address Line 1" name="address_1" id="address_1">
+		<input type="text" placeholder="Address Line 1" name="address_2" id="address_2">
+		<input type="text" placeholder="Town/City" name="town" id="town">
+		<input type="text" placeholder="Post Code" name="postcode" id="postcode">
+
+		<h2 class="title">Payment</h2>
+
+		<select>
+			<option selected="selected">Select Credit/Debit Card</option>
+			<option>Visa</option>
+			<option>Visa Electron</option>
+			<option>Mastercard</option>
+			<option>Maestro</option>
+			<option>American Express</option>
+		</select>
+
+		<input type="text" placeholder="Name on card" name="card_name" id="card_name">
+		<input type="text" placeholder="Card Number" name="card_number" id="card_number">
+
 	</form>
+	
+	
+	<aside>
+		<h2>Please read before purchasing</h2>
+		
+		<ul>
+			<li><span>Tickets are non-refundable.</span></li>
+			<li><span>All attendees are required to abide by our Code of Conduct.</span></li>
+			<li><span>Under 10s can attend free of charge, however, this offer is limited to one child per ticket paying adult.</span></li>
+			<li><span>Under 16s need to be accompanied by a parent or a guardian who is at least 18. One parent or guardian can accompany a group of under 16s.</span></li>
+			<li><span>Under 18s are not permitted to play 18 rated games.</span></li>
+			<li><span>By purchasing a ticket you are agreeing to our privacy policy and our Terms and Conditions.</span></li>
+			<li><span>Only tickets purchased via this website are guaranteed to be valid.</span></li>
+		</ul>
+
+		<h2>Got a Question?</h2>
+		<p>If you have a question before buying tickets, take a look at our frequently asked questions page. It's full of useful information. </p>
+
+		<h2>Group Bookings</h2>
+		<p>Are you a teacher or tutor arranging a trip on behalf of a school, college or university? Please contact us for a quote. </p>
+	</aside>
+
+	<div class="floatclear"></div>
+
+	
+
+{% endblock %}
+
+{% block scripts %}
+	<script text="text/javascript">
+		function updateTotal() {
+			var totalPrice = ($("#super-pass").val() * 60) + ($("#thursday-early").val() * 20) + ($("#thursday").val() * 17.50) + ($("#friday").val() * 17.50) + ($("#saturday").val() * 17.50) + ($("#sunday").val() * 17.50);
+			
+			totalPrice = totalPrice.toFixed(2);
+
+			$("#total").html("£" + totalPrice);
+		}
+
+		updateTotal();
+
+		$(document).ready(function(){
+	    	$("#progress").sticky({topSpacing:80});
+	  	});
+	</script>
 {% endblock %}
