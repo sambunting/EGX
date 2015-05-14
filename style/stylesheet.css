@@ -45,6 +45,8 @@ aside { width: 28%; float: right; margin-top: 20px;}
 	#select-tickets #first_name, #select-tickets #last_name { width: 47%;}
 	#select-tickets #email, #select-tickets #address_1, #select-tickets #address_2, #select-tickets #town, #select-tickets #postcode { width: 96.8%;}
 
+.tile-block { margin-top: 20px; width: 50%; float: left;}
+	
 #video-container { height: 100%;}
 	#video-container video {position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -9999;}
 	#video-container #intro-text { position: absolute; top: 25%; left: 10%; z-index: -1000;} 
