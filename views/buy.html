@@ -6,10 +6,12 @@
 	<form id="select-tickets">
 
 		<div id="progress">
-			<p>Ticket Information</p>
-			<p>Your Details</p>
-			<p>Payment</p>
+			<p class="current" id="progress-1">Ticket Information</p>
+			<p id="progress-2">Your Details</p>
+			<p id="progress-3">Payment</p>
 		</div>
+
+		<h2 class="title">Ticket Information</h2>
 
 		<table width="100%">
 			<tr>
@@ -146,9 +148,17 @@
 			<option>Maestro</option>
 			<option>American Express</option>
 		</select>
+		<br>
+		<input type="text" placeholder="Name on card" name="card_name" id="card_name"><br>
+		<input type="text" placeholder="Card Number" name="card_number" id="card_number"><br>
+		Expiry Date <input type="text" placeholder="MM" name="expiry_month" id="expiry_month"> / <input type="text" placeholder="YY" name="expiry_year" id="expiry_year"><br>
+		<input type="text" placeholder="SVG" name="card_svg" id="card_svg"><br><br>
 
-		<input type="text" placeholder="Name on card" name="card_name" id="card_name">
-		<input type="text" placeholder="Card Number" name="card_number" id="card_number">
+		<input type="checkbox" name="checkbox-1" id="checkbox-1"><label for="checkbox-1"> From time-to-time Gamer Events Ltd would like to contact you regarding our events and associated activity, such as exclusive information and early access to offers and tickets. Please tick this box if you would not like to receive such communication from us. We will not share your information with any third parties.</label><br><br>
+		<input type="checkbox" name="checkbox-2" id="checkbox-2"><label for="checkbox-2"> At our events it’s our exhibitors and partners who bring their latest games and exclusive reveals. Occasionally Gamer Events Ltd would like to send you exclusive offers and promotions on behalf of these exhibitors and partners. Please tick the box if you would not like to receive such communication.</label><br><br>
+		<input type="checkbox" name="checkbox-3" id="checkbox-3"><label for="checkbox-3"><b> I Agree to our terms and conditions, code of conduct and privacy policy.</b></label>
+		<br><br>
+		<input type="submit" name="submit" id="submit" value="Buy Tickets">
 
 	</form>
 	
@@ -194,5 +204,19 @@
 		$(document).ready(function(){
 	    	$("#progress").sticky({topSpacing:80});
 	  	});
+
+	  	$(window).scroll(function() {
+
+			var wScroll = $(this).scrollTop();
+
+			if (wScroll > ($(window).height()) / 1.1)  {
+				$("#progress-1").removeClass("current");
+				$("#progress-2").addClass("current");
+			} else {
+				$("#progress-2").removeClass("current");
+				$("#progress-1").addClass("current");
+			}
+
+		})
 	</script>
 {% endblock %}
