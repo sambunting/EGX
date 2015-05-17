@@ -61,6 +61,12 @@
 		<script type="text/javascript" src="script/jquery.js"></script>
 		<script type="text/javascript" src="script/stellar.js"></script>
 		<script type="text/javascript">
+			$('video').hide();
+			
+			$('video').ready(function() {
+				$('video').fadeIn(2000);
+			})
+
 			$.stellar();
 		</script>
 	</body>
