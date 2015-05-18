@@ -1,10 +1,31 @@
 <footer>
 	<div id="footer-inner">
 		<div id="footer-left">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae necessitatibus incidunt nesciunt, aperiam id repudiandae? Ducimus mollitia ex quidem nesciunt!
+			<img src="image/logo.png" width="180">
+
+			<ul>
+				<li><h3>Navigation</h3></li>
+				<li><a href="index">Home</a></li>
+				<li><a href="venue">Venue</a></li>
+				<li><a href="about">FAQ</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+
+			<ul>
+				<li><h3>Tickets</h3></li>
+				<li><a href="buy">Buy Tickets</a></li>
+				<li><a href="#">Ticketing Support</a></li>
+			</ul>
+
+			<ul>
+				<li><h3>Terms</h3></li>
+				<li><a href="#">Terms and Conditions</a></li>
+				<li><a href="#">Code of Conduct</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+			</ul>
 		</div>
 		<div id="footer-right">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia corporis aliquid voluptates voluptatum ipsum culpa, nam voluptate.
+			<div id="example1"></div>
 		</div>
 
 		<div class="floatclear"></div>
@@ -12,3 +33,15 @@
 		<p>Developed by Sam Bunting. This website is not affiliated or endorsed by Gamer Events Ltd or Gamer Network. Created for educational purposes only. No payment or personal information is collected by this site. Tickets for EGX cannot be purchased here. Vist <a href="https://www.egx.net/egx">www.egx.net/egx</a> for the official site.<br><br> <a href="https://github.com/sambunting/EGX">Source code available on GitHub.</a></p>
 	</div>
 </footer>
+<script type="text/javascript" src="script/twitter-fetcher.js"></script>
+<script type="text/javascript">
+	var config1 = {
+	  "id": '600407097633832961',
+	  "domId": 'example1',
+	  "maxTweets": 1,
+	  "enableLinks": true,
+	  "showInteraction": false,
+	};
+
+	twitterFetcher.fetch(config1);
+</script>
