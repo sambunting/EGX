@@ -22,6 +22,9 @@ References listed here are to be used in final versions.
 
 **Sticky.js** - Created by Anthony Garand. Used under the MIT License.
 
+**Twitter Post Fetcher** - Created by Jason Mayes.
+
+
 ##CSS
 
 **Normalize.css** - Created by Nicolas Gallagher and Jonathan Neal. Used under the MIT License.
