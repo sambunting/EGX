@@ -209,12 +209,26 @@
 
 			var wScroll = $(this).scrollTop();
 
-			if (wScroll > ($(window).height()) / 1.1)  {
-				$("#progress-1").removeClass("current");
-				$("#progress-2").addClass("current");
+			if (wScroll > ($(window).height()) / $(window).height() + 1000)  {
+				if (wScroll > $(window).height() / $(window).height() + 1400) {
+					if (wScroll > $(window).height() / $(window).height() + 1600) {
+							$("#progress-1").removeClass("current");
+							$("#progress-2").removeClass("current");
+							$("#progress-3").addClass("current");
+					} else {
+						$("#progress-1").removeClass("current");
+						$("#progress-2").addClass("current");
+						$("#progress-3").removeClass("current");
+					}
+	  			} else {
+	  				$("#progress-1").removeClass("current");
+					$("#progress-2").addClass("current");
+					$("#progress-3").removeClass("current");
+	  			}	
 			} else {
-				$("#progress-2").removeClass("current");
 				$("#progress-1").addClass("current");
+				$("#progress-2").removeClass("current");
+				$("#progress-3").removeClass("current");
 			}
 
 		})
