@@ -39,4 +39,6 @@ References listed here are to be used in final versions.
 
 **Background video used on the homepage** - Edited from [EGX 2015 teaser](https://www.youtube.com/watch?v=6x162iVT7OM). Originally created and published by [EGXTV](https://www.youtube.com/channel/UCejV0ECovLMARGaPwzaRoOA).
 
+**Social Icons** - Created by Shota MIckaia. Used under Creative Commons (Attribution 2.5 Generic)
+
 **All images used including company or organization logos are owned by their respected owners.**
